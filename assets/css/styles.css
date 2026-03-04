@@ -36,6 +36,42 @@ overflow-x:hidden;
 
 }
 
+/* Global Link Styling */
+a {
+    color: #222;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #555;
+}
+
+/* Specific styling for the 'Listen on Spotify' link */
+.listen-link a {
+    display: inline-block;
+    font-weight: 500;
+    color: #222;
+    border-bottom: 2px solid #d1cbc2;
+    padding-bottom: 2px;
+}
+
+.listen-link a:hover {
+    color: #000;
+    border-bottom-color: #222;
+}
+
+/* Ensure paragraph links (if you add them later) look nice and readable */
+p a {
+    text-decoration: underline;
+    text-decoration-color: #d1cbc2;
+    text-underline-offset: 3px;
+}
+
+p a:hover {
+    text-decoration-color: #222;
+}
+
 /* Layout */
 
 .container{
