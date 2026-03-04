@@ -190,14 +190,16 @@ h3 {
 
 .pillar {
     width: 100%;
-    max-width: 260px; 
+    max-width: 280px; /* Slightly wider to prevent awkward breaking */
+    margin: 0 auto;   /* This ensures the individual box stays centered in its grid cell */
     text-align: center;
-    padding: 30px 10px 40px;
+    padding: 30px 20px 40px;
     border-top: 1px solid #ece7df;
     border-bottom: 1px solid #ece7df;
     transition: transform .18s ease;
     display: flex;
     flex-direction: column;
+    align-items: center; /* This forces the content (icons/text) to stay horizontally centered */
 }
 
 .pillar:hover {
