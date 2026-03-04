@@ -157,7 +157,9 @@ border:1px solid #e8e3dc;
 width:100%;
 }
 
-/* Pillars */
+/* =================================================
+   Pillars Section
+================================================= */
 
 .pillars-section{
 margin:120px 0;
@@ -166,17 +168,36 @@ border-top:1px solid #ece7df;
 }
 
 .pillars{
+
 display:grid;
+
 grid-template-columns:repeat(3,1fr);
-gap:55px;
+
+gap:60px;
+
+max-width:900px;
+
+margin:0 auto;
+
+align-items:start;
+
 }
 
 .pillar{
+
+max-width:260px;
+
+margin:0 auto;
+
 text-align:center;
-padding:45px 30px;
+
+padding:40px 10px;
+
 border-top:1px solid #ece7df;
 border-bottom:1px solid #ece7df;
+
 transition:transform .18s ease;
+
 }
 
 .pillar:hover{
@@ -184,73 +205,43 @@ transform:translateY(-4px);
 }
 
 .pillar h2{
+
 font-size:34px;
+
 line-height:1.15;
+
+letter-spacing:-0.01em;
+
+margin-bottom:18px;
+
 }
 
 .pillar p{
+
 font-size:18px;
+
 line-height:1.75;
+
 color:#444;
-margin-bottom:32px;
+
+margin-bottom:30px;
+
 }
 
 .pillar a{
+
 font-size:16px;
+
+font-weight:500;
+
 text-decoration:none;
+
 color:#333;
+
 }
 
 .pillar a:hover{
 text-decoration:underline;
-}
-
-/* Concepts */
-
-.concepts{
-text-align:center;
-}
-
-.concept-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
-margin-top:35px;
-
-}
-
-.concept-grid a{
-
-display:block;
-
-padding:26px;
-
-border:1px solid #e6e2dc;
-
-background:#fff;
-
-font-size:18px;
-
-text-decoration:none;
-
-color:#222;
-
-box-shadow:0 1px 2px rgba(0,0,0,.04);
-
-transition:transform .15s ease,box-shadow .15s ease;
-
-}
-
-.concept-grid a:hover{
-
-transform:translateY(-3px);
-
-box-shadow:0 6px 14px rgba(0,0,0,.08);
-
 }
 
 /* Episodes */
