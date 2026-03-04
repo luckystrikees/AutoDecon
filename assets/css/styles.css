@@ -184,7 +184,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 45px;
-    justify-items: center;   
+     /*justify-items: center; */   
     align-items: stretch; 
 }
 
@@ -222,11 +222,7 @@ h3 {
     letter-spacing: -0.01em;
     margin-top: 0;
     margin-bottom: 12px;
-    min-height: 100px;
-    
-    /* ADD THIS */
-    hyphens: auto;
-    hyphens: auto;          
+    min-height: 100px;         
 }
 
 .pillar p {
@@ -237,8 +233,7 @@ h3 {
     margin-bottom: auto;
     
     /* These two lines make the paragraph shape much more uniform */
-    text-wrap: pretty; 
-    hyphens: auto; 
+    text-wrap: pretty;
 }
 
 .pillar a {
