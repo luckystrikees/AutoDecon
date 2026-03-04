@@ -149,45 +149,79 @@ border-radius:6px;
 
 
 /* =================================================
-   Topic Pillars
+   Pillars Section
 ================================================= */
+
+.pillars-section{
+margin:120px 0;
+padding-top:40px;
+border-top:1px solid #ece7df;
+}
 
 .pillars{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:40px;
+gap:55px;
+align-items:stretch;
 }
 
 .pillar{
-border-top:1px solid #e8e3dc;
-border-bottom:1px solid #e8e3dc;
-
-padding:35px 20px;
-
 display:flex;
 flex-direction:column;
 justify-content:center;
 
 text-align:center;
-min-height:200px;
+
+padding:45px 30px;
+
+border-top:1px solid #ece7df;
+border-bottom:1px solid #ece7df;
+
+transition:transform .18s ease;
+}
+
+.pillar:hover{
+transform:translateY(-3px);
+}
+
+.pillar::before{
+content:"";
+display:block;
+width:60px;
+height:1px;
+background:#ece7df;
+margin:0 auto 22px auto;
 }
 
 .pillar h2{
-margin-top:0;
-margin-bottom:12px;
-}
-
-.pillar p{
+font-size:34px;
+line-height:1.15;
+letter-spacing:-0.01em;
 margin-bottom:18px;
 }
 
+.pillar p{
+font-size:18px;
+line-height:1.75;
+color:#444;
+
+max-width:320px;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:32px;
+}
+
 .pillar a{
-margin-top:auto;
-font-size:15px;
+font-size:16px;
+font-weight:500;
+letter-spacing:.02em;
 text-decoration:none;
 color:#333;
 }
 
+.pillar a:hover{
+text-decoration:underline;
+}
 
 /* =================================================
    Key Ideas (Editorial Index Style)
