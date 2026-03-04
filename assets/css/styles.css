@@ -221,8 +221,8 @@ h3 {
     line-height: 1.15;
     letter-spacing: -0.01em;
     margin-top: 0;
-    margin-bottom: 18px;
-    min-height: 120px;
+    margin-bottom: 6px;
+    min-height: 100px;
     
     /* ADD THIS */
     hyphens: auto;
