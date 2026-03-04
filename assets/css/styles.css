@@ -190,7 +190,7 @@ h3 {
 
 .pillar {
     width: 100%;
-    max-width: 280px; /* Slightly wider to prevent awkward breaking */
+    max-width: 320px; /* Slightly wider to prevent awkward breaking */
     margin: 0 auto;   /* This ensures the individual box stays centered in its grid cell */
     text-align: center;
     padding: 30px 20px 40px;
@@ -217,7 +217,7 @@ h3 {
 }
 
 .pillar h2 {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1.15;
     letter-spacing: -0.01em;
     margin-top: 0;
@@ -226,7 +226,7 @@ h3 {
     
     /* ADD THIS */
     hyphens: auto;
-    word-break: break-word; 
+    hyphens: auto;          
 }
 
 .pillar p {
