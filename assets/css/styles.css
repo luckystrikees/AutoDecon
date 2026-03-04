@@ -1,42 +1,30 @@
-
 /* ================================================
 Autism Deconstructed — Production Stylesheet
 ================================================ */
 
 /* Reset */
-
-*{
-box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html{
-scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-
-margin:0;
-
-font-family:"Source Serif 4",serif;
-
-line-height:1.85;
-
-color:#222;
-
-text-rendering:optimizeLegibility;
-font-feature-settings:"liga","kern";
-
-background:
-linear-gradient(120deg,#faf8f4,#f4f0e9,#faf8f4);
-
-background-size:300% 300%;
-animation:ambientShift 80s ease infinite;
-
-overflow-x:hidden;
-
+body {
+    margin: 0;
+    font-family: "Source Serif 4", serif;
+    line-height: 1.85;
+    color: #222;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga", "kern";
+    background: linear-gradient(120deg, #faf8f4, #f4f0e9, #faf8f4);
+    background-size: 300% 300%;
+    animation: ambientShift 80s ease infinite;
+    overflow-x: hidden;
 }
 
-/* Global Link Styling */
+/* Global Links */
 a {
     color: #222;
     text-decoration: none;
@@ -47,21 +35,6 @@ a:hover {
     color: #555;
 }
 
-/* Specific styling for the 'Listen on Spotify' link */
-.listen-link a {
-    display: inline-block;
-    font-weight: 500;
-    color: #222;
-    border-bottom: 2px solid #d1cbc2;
-    padding-bottom: 2px;
-}
-
-.listen-link a:hover {
-    color: #000;
-    border-bottom-color: #222;
-}
-
-/* Ensure paragraph links (if you add them later) look nice and readable */
 p a {
     text-decoration: underline;
     text-decoration-color: #d1cbc2;
@@ -73,344 +46,331 @@ p a:hover {
 }
 
 /* Layout */
-
-.container{
-max-width:740px;
-margin:auto;
-padding:0 25px;
+.container {
+    max-width: 740px;
+    margin: auto;
+    padding: 0 25px;
 }
 
 /* Hero */
-
-.hero{
-text-align:center;
-padding:80px 0 30px;
-position:relative;
+.hero {
+    text-align: center;
+    padding: 80px 0 30px;
+    position: relative;
 }
 
-.logo{
-width:320px;
-max-width:70%;
-display:block;
-margin:40px auto 20px;
+.logo {
+    width: 320px;
+    max-width: 70%;
+    display: block;
+    margin: 40px auto 20px;
 }
 
-.hero h1{
-font-size:48px;
-font-weight:500;
-letter-spacing:-.02em;
-margin-bottom:10px;
+.hero h1 {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -.02em;
+    margin-bottom: 10px;
 }
 
-.tagline{
-font-size:20px;
-color:#444;
+.tagline {
+    font-size: 20px;
+    color: #444;
 }
 
 /* Navigation */
-
-.main-nav{
-text-align:center;
-margin:40px 0 60px;
-font-size:14px;
-letter-spacing:.08em;
-text-transform:uppercase;
+.main-nav {
+    text-align: center;
+    margin: 40px 0 60px;
+    font-size: 14px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
 }
 
-.main-nav a{
-color:#444;
-text-decoration:none;
-position:relative;
-padding:0 6px;
+.main-nav a {
+    color: #444;
+    position: relative;
+    padding: 0 6px;
 }
 
-.main-nav span{
-color:#999;
-padding:0 5px;
+.main-nav span {
+    color: #999;
+    padding: 0 5px;
 }
 
-.main-nav a:hover{
-color:#000;
+.main-nav a:hover {
+    color: #000;
 }
 
-.main-nav a::after{
-
-content:"";
-position:absolute;
-
-left:0;
-bottom:-4px;
-
-width:0;
-height:1px;
-
-background:#333;
-
-transition:width .2s ease;
-
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: #333;
+    transition: width .2s ease;
 }
 
-.main-nav a:hover::after{
-width:100%;
+.main-nav a:hover::after {
+    width: 100%;
 }
 
 /* Sections */
-
-section{
-margin:100px 0;
+section {
+    margin: 100px 0;
 }
 
-h2{
-font-size:32px;
-font-weight:500;
+h2 {
+    font-size: 32px;
+    font-weight: 500;
 }
 
-h3{
-font-size:24px;
-font-weight:500;
+h3 {
+    font-size: 24px;
+    font-weight: 500;
 }
 
-/* Feature */
-
-.feature{
-
-background:#f3efe8;
-
-padding:50px 40px;
-
-border:1px solid #e8e3dc;
-
-box-shadow:0 10px 24px rgba(0,0,0,.04);
-
+/* Feature Section */
+.feature {
+    background: #f3efe8;
+    padding: 50px 40px;
+    border: 1px solid #e8e3dc;
+    box-shadow: 0 10px 24px rgba(0,0,0,.04);
 }
 
-.player{
-margin:25px 0;
+.player {
+    margin: 25px 0;
 }
 
-.player iframe{
-border-radius:6px;
-border:1px solid #e8e3dc;
-width:100%;
+.player iframe {
+    border-radius: 6px;
+    border: 1px solid #e8e3dc;
+    width: 100%;
+}
+
+.listen-link a {
+    display: inline-block;
+    font-weight: 500;
+    color: #222;
+    border-bottom: 2px solid #d1cbc2;
+    padding-bottom: 2px;
+}
+
+.listen-link a:hover {
+    color: #000;
+    border-bottom-color: #222;
+    text-decoration: none;
 }
 
 /* =================================================
    Pillars Section
 ================================================= */
-
-.pillars-section{
-margin:120px 0;
-padding-top:40px;
-border-top:1px solid #ece7df;
+.pillars-section {
+    margin: 120px 0;
+    padding-top: 40px;
+    border-top: 1px solid #ece7df;
 }
 
-.pillars{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:60px;
-
-justify-items:center;   /* THIS is the key fix */
-
-align-items:start;
-
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    justify-items: center;   
+    align-items: stretch; /* Forces equal height columns */
 }
 
-.pillar{
-
-width:100%;
-max-width:240px;   /* keeps columns visually balanced */
-
-text-align:center;
-
-padding:40px 10px;
-
-border-top:1px solid #ece7df;
-border-bottom:1px solid #ece7df;
-
-transition:transform .18s ease;
-
+.pillar {
+    width: 100%;
+    max-width: 260px; 
+    text-align: center;
+    padding: 40px 10px;
+    border-top: 1px solid #ece7df;
+    border-bottom: 1px solid #ece7df;
+    transition: transform .18s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.pillar:hover{
-transform:translateY(-4px);
+.pillar:hover {
+    transform: translateY(-4px);
 }
 
-.pillar h2{
-
-font-size:34px;
-line-height:1.15;
-letter-spacing:-0.01em;
-
-margin-bottom:18px;
-
+.pillar h2 {
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-top: 0;
+    margin-bottom: 18px;
+    min-height: 120px; /* Aligns all paragraphs to start at the exact same height */
 }
 
-.pillar p{
-
-font-size:18px;
-line-height:1.75;
-color:#444;
-
-margin-bottom:30px;
-
+.pillar p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 30px;
 }
 
-.pillar a{
-
-font-size:16px;
-font-weight:500;
-text-decoration:none;
-color:#333;
-
+.pillar a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-top: auto; /* Locks link to the bottom border perfectly */
 }
 
-.pillar a:hover{
-text-decoration:underline;
+.pillar a:hover {
+    text-decoration: underline;
 }
 
-/* Episodes */
-
-.episodes{
-text-align:center;
-margin-top:120px;
+/* =================================================
+   Concepts Grid
+================================================= */
+.concepts h2 {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.episodes ul{
-
-list-style:none;
-padding:0;
-max-width:600px;
-margin:40px auto;
-text-align:left;
-
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.episodes li{
-padding:16px 0;
-border-bottom:1px solid #ece7df;
+.concept-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ece7df;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.02);
 }
 
-.episodes a{
-font-size:20px;
-color:#222;
-text-decoration:none;
+.concept-grid a:hover {
+    border-color: #d1cbc2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,.04);
 }
 
-.episode-meta{
-display:block;
-font-size:14px;
-color:#777;
-margin-top:4px;
+/* =================================================
+   Episodes List
+================================================= */
+.episodes {
+    text-align: center;
+    margin-top: 120px;
 }
 
-/* Footer */
-
-footer{
-text-align:center;
-margin-top:120px;
-padding-bottom:40px;
-color:#555;
-font-size:16px;
+.episodes ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
 }
 
-/* Background */
-
-body::before{
-
-content:"";
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background-image:
-radial-gradient(rgba(170,170,170,.18) 1px,transparent 1px);
-
-background-size:45px 45px;
-
-animation:dustDriftSlow 90s linear infinite;
-
-opacity:.35;
-
-pointer-events:none;
-
+.episodes li {
+    padding: 16px 0;
+    border-bottom: 1px solid #ece7df;
 }
 
-body::after{
-
-content:"";
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background-image:
-radial-gradient(rgba(170,170,170,.12) 1px,transparent 1px);
-
-background-size:70px 70px;
-
-animation:dustDriftFar 140s linear infinite;
-
-opacity:.25;
-
-pointer-events:none;
-
+.episodes a {
+    font-size: 20px;
 }
 
-/* Animations */
-
-@keyframes dustDriftSlow{
-
-0%{transform:translateY(0);}
-100%{transform:translateY(-45px);}
-
+.episode-meta {
+    display: block;
+    font-size: 14px;
+    color: #777;
+    margin-top: 4px;
 }
 
-@keyframes dustDriftFar{
-
-0%{transform:translateY(0);}
-100%{transform:translateY(-70px);}
-
+/* =================================================
+   Footer
+================================================= */
+footer {
+    text-align: center;
+    margin-top: 120px;
+    padding-bottom: 40px;
+    color: #555;
+    font-size: 16px;
 }
 
-@keyframes ambientShift{
-
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-
+/* =================================================
+   Background Animations
+================================================= */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(170,170,170,.18) 1px, transparent 1px);
+    background-size: 45px 45px;
+    animation: dustDriftSlow 90s linear infinite;
+    opacity: .35;
+    pointer-events: none;
+    z-index: -1;
 }
 
-/* Responsive */
-
-@media (max-width:900px){
-
-.hero h1{
-font-size:38px;
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(170,170,170,.12) 1px, transparent 1px);
+    background-size: 70px 70px;
+    animation: dustDriftFar 140s linear infinite;
+    opacity: .25;
+    pointer-events: none;
+    z-index: -1;
 }
 
-.pillars{
-grid-template-columns:1fr;
+@keyframes dustDriftSlow {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-45px); }
 }
 
-.concept-grid{
-grid-template-columns:1fr;
+@keyframes dustDriftFar {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-70px); }
 }
 
-.feature{
-padding:40px 30px;
+@keyframes ambientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-}
+/* =================================================
+   Responsive Mobile Adjustments
+================================================= */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 38px;
+    }
 
+    .feature {
+        padding: 40px 30px;
+    }
+
+    .pillars {
+        grid-template-columns: 1fr;
+    }
+
+    .pillar h2 {
+        min-height: auto; /* Removes the fixed height spacer so it behaves naturally on mobile */
+    }
+
+    .concept-grid {
+        grid-template-columns: 1fr;
+    }
+}
