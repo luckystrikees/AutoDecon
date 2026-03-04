@@ -148,3 +148,40 @@ padding-bottom:40px;
 color:#555;
 font-size:16px;
 }
+
+/* =================================================
+   Floating Dust Background
+================================================= */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+
+background-image:
+radial-gradient(rgba(180,180,180,0.15) 1px, transparent 1px);
+
+background-size:40px 40px;
+
+opacity:0.35;
+
+animation:dustDrift 80s linear infinite;
+
+z-index:-1;
+}
+
+@keyframes dustDrift{
+
+0%{
+transform:translateY(0px);
+}
+
+100%{
+transform:translateY(-40px);
+}
+
+}
