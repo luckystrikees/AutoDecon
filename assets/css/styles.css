@@ -183,14 +183,14 @@ h3 {
 .pillars {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
+    gap: 45px;
     justify-items: center;   
     align-items: stretch; 
 }
 
 .pillar {
     width: 100%;
-    max-width: 320px; /* Slightly wider to prevent awkward breaking */
+    max-width: 350px; /* Slightly wider to prevent awkward breaking */
     margin: 0 auto;   /* This ensures the individual box stays centered in its grid cell */
     text-align: center;
     padding: 15px 10px 20px;
