@@ -161,21 +161,30 @@ gap:40px;
 .pillar{
 border-top:1px solid #e8e3dc;
 border-bottom:1px solid #e8e3dc;
-padding-top:25px;
-padding-bottom:25px;
+
+padding:35px 20px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+text-align:center;
+min-height:200px;
 }
 
 .pillar h2{
-font-size:26px;
+margin-top:0;
+margin-bottom:12px;
 }
 
 .pillar p{
-margin-bottom:15px;
+margin-bottom:18px;
 }
 
 .pillar a{
-text-decoration:none;
+margin-top:auto;
 font-size:15px;
+text-decoration:none;
 color:#333;
 }
 
