@@ -149,9 +149,10 @@ h3 {
 }
 
 .player iframe {
-    border-radius: 8px;
-    border: 1px solid #e8e3dc;
+    border: none; /* Removes the misaligned bounding box */
+    border-radius: 12px; /* Matches Spotify's native rounded corners just in case */
     width: 100%;
+    display: block; /* Removes the tiny invisible text-descender gap below iframes */
 }
 
 .listen-link a {
