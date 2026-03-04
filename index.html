@@ -1,209 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Autism, Deconstructed</title>
-
 <meta name="description" content="Autism, Deconstructed explores autism through biology, energy, and lived experience.">
-
-<link rel="icon" type="image/png" href="/assets/images/favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/assets/css/styles.css">
+<style>
+/* ================================================
+Autism Deconstructed — Production Stylesheet
+================================================ */
 
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Source Serif 4", serif;
+    line-height: 1.85;
+    color: #222;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga", "kern";
+    background: linear-gradient(120deg, #faf8f4, #f4f0e9, #faf8f4);
+    background-size: 300% 300%;
+    animation: ambientShift 80s ease infinite;
+    overflow-x: hidden;
+}
+
+/* Layout */
+.container {
+    max-width: 740px;
+    margin: auto;
+    padding: 0 25px;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 80px 0 30px;
+    position: relative;
+}
+
+.logo {
+    width: 320px;
+    max-width: 70%;
+    display: block;
+    margin: 40px auto 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -.02em;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 20px;
+    color: #444;
+}
+
+/* Navigation */
+.main-nav {
+    text-align: center;
+    margin: 40px 0 60px;
+    font-size: 14px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.main-nav a {
+    color: #444;
+    text-decoration: none;
+    position: relative;
+    padding: 0 6px;
+}
+
+.main-nav span {
+    color: #999;
+    padding: 0 5px;
+}
+
+.main-nav a:hover {
+    color: #000;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: #333;
+    transition: width .2s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Sections */
+section {
+    margin: 100px 0;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* Feature */
+.feature {
+    background: #f3efe8;
+    padding: 50px 40px;
+    border: 1px solid #e8e3dc;
+    box-shadow: 0 10px 24px rgba(0,0,0,.04);
+}
+
+.player {
+    margin: 25px 0;
+}
+
+.player iframe {
+    border-radius: 6px;
+    border: 1px solid #e8e3dc;
+    width: 100%;
+}
+
+/* =================================================
+   Pillars Section
+================================================= */
+.pillars-section {
+    margin: 120px 0;
+    padding-top: 40px;
+    border-top: 1px solid #ece7df;
+}
+
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    justify-items: center;
+    align-items: start;
+}
+
+.pillar {
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+    padding: 40px 10px;
+    border-top: 1px solid #ece7df;
+    border-bottom: 1px solid #ece7df;
+    transition: transform .18s ease;
+}
+
+.pillar:hover {
+    transform: translateY(-4px);
+}
+
+.pillar h2 {
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+}
+
+.pillar p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.pillar a {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+}
+
+.pillar a:hover {
+    text-decoration: underline;
+}
+
+/* =================================================
+   Concepts Grid (ADDED FIX)
+================================================= */
+.concepts h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.concept-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ece7df;
+    color: #222;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,.02);
+}
+
+.concept-grid a:hover {
+    border-color: #d1cbc2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,.04);
+}
+
+/* Episodes */
+.episodes {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.episodes ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.episodes li {
+    padding: 16px 0;
+    border-bottom: 1px solid #ece7df;
+}
+
+.episodes a {
+    font-size: 20px;
+    color: #222;
+    text-decoration: none;
+}
+
+.episode-meta {
+    display: block;
+    font-size: 14px;
+    color: #777;
+    margin-top: 4px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 120px;
+    padding-bottom: 40px;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(170,170,170,.18) 1px, transparent 1px);
+    background-size: 45px 45px;
+    animation: dustDriftSlow 90s linear infinite;
+    opacity: .35;
+    pointer-events: none;
+    z-index: -1; /* Ensures it stays behind text */
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(170,170,170,.12) 1px, transparent 1px);
+    background-size: 70px 70px;
+    animation: dustDriftFar 140s linear infinite;
+    opacity: .25;
+    pointer-events: none;
+    z-index: -1; /* Ensures it stays behind text */
+}
+
+/* Animations */
+@keyframes dustDriftSlow {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-45px); }
+}
+
+@keyframes dustDriftFar {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-70px); }
+}
+
+@keyframes ambientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+    .pillars {
+        grid-template-columns: 1fr;
+    }
+    .concept-grid {
+        grid-template-columns: 1fr;
+    }
+    .feature {
+        padding: 40px 30px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header class="hero">
-
-<img src="/assets/images/podcast-logo.png" alt="Autism Deconstructed Logo" class="logo">
-
-<h1>Autism, Deconstructed</h1>
-
-<p class="tagline">
-A podcast exploring autism through biology, energy, and lived experience.
-</p>
-
+    <!-- Using a placeholder logo since the local image won't load for me -->
+    <!-- <img src="/assets/images/podcast-logo.png" alt="Autism Deconstructed Logo" class="logo"> -->
+    <br>
+    <h1>Autism, Deconstructed</h1>
+    <p class="tagline">A podcast exploring autism through biology, energy, and lived experience.</p>
 </header>
 
-
 <nav class="main-nav" aria-label="Main Navigation">
-
-<a href="/">Home</a>
-<span>·</span>
-
-<a href="/episodes/">Episodes</a>
-<span>·</span>
-
-<a href="/concepts/">Concepts</a>
-<span>·</span>
-
-<a href="/experience/">The Autistic Experience</a>
-<span>·</span>
-
-<a href="/facts/">The Facts</a>
-<span>·</span>
-
-<a href="/everyday-life/">Everyday Life</a>
-<span>·</span>
-
-<a href="/about/">About</a>
-
+    <a href="/">Home</a> <span>·</span>
+    <a href="/episodes/">Episodes</a> <span>·</span>
+    <a href="/concepts/">Concepts</a> <span>·</span>
+    <a href="/experience/">The Autistic Experience</a> <span>·</span>
+    <a href="/facts/">The Facts</a> <span>·</span>
+    <a href="/everyday-life/">Everyday Life</a> <span>·</span>
+    <a href="/about/">About</a>
 </nav>
-
 
 <main class="container" role="main">
 
-<section class="feature">
+    <section class="feature">
+        <h2>Latest Episode</h2>
+        <h3>The Physics of Social Fatigue</h3>
+        <div class="player">
+            <iframe
+                src="https://open.spotify.com/embed/episode/1g6kyFAEwEldJvmUaUIKqu"
+                width="100%"
+                height="152"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            </iframe>
+        </div>
+        <p class="episode-description">
+            Autistic burnout is usually framed as a psychological problem. This episode explores the actual science of what's really happening.
+        </p>
+        <p class="listen-link">
+            <a href="https://open.spotify.com/episode/1g6kyFAEwEldJvmUaUIKqu">Listen on Spotify →</a>
+        </p>
+    </section>
 
-<h2>Latest Episode</h2>
+    <section class="pillars-section">
+        <div class="pillars">
+            <div class="pillar">
+                <h2>The Autistic<br>Experience</h2>
+                <p>Understanding autism from the inside — sensory life, attention, masking, burnout, and the realities many autistic people navigate every day.</p>
+                <a href="/experience/">Explore →</a>
+            </div>
 
-<h3>The Physics of Social Fatigue</h3>
+            <div class="pillar">
+                <h2>The Underrepresented<br>Facts</h2>
+                <p>What biology and research actually show about autism — energy use, perception, cognition, and the science behind autistic differences.</p>
+                <a href="/facts/">Explore →</a>
+            </div>
 
-<div class="player">
+            <div class="pillar">
+                <h2>Everyday<br>Life</h2>
+                <p>How autistic people interact with the world around them — work, relationships, environments, and expectations.</p>
+                <a href="/everyday-life/">Explore →</a>
+            </div>
+        </div>
+    </section>
 
-<iframe
-src="https://open.spotify.com/embed/episode/1g6kyFAEwEldJvmUaUIKqu"
-width="100%"
-height="152"
-loading="lazy"
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-</iframe>
+    <section class="concepts">
+        <h2>Key Ideas</h2>
+        <div class="concept-grid">
+            <a href="/concepts/burnout">Burnout</a>
+            <a href="/concepts/masking">Masking</a>
+            <a href="/concepts/monotropism">Monotropism</a>
+            <a href="/concepts/prediction-error">Prediction Error</a>
+            <a href="/concepts/energetic-limits">Energetic Limits</a>
+            <a href="/concepts/social-adaptation">Social Adaptation</a>
+        </div>
+    </section>
 
-</div>
-
-<p class="episode-description">
-Autistic burnout is usually framed as a psychological problem.
-This episode explores the actual science of what's really happening.
-</p>
-
-<p class="listen-link">
-<a href="https://open.spotify.com/episode/1g6kyFAEwEldJvmUaUIKqu">
-Listen on Spotify →
-</a>
-</p>
-
-</section>
-
-
-<section class="pillars-section">
-
-<div class="pillars">
-
-<div class="pillar">
-
-<h2>The Autistic<br>Experience</h2>
-
-<p>
-Understanding autism from the inside — sensory life,
-attention, masking, burnout, and the realities many
-autistic people navigate every day.
-</p>
-
-<a href="/experience/">Explore →</a>
-
-</div>
-
-
-<div class="pillar">
-
-<h2>The Underrepresented<br>Facts</h2>
-
-<p>
-What biology and research actually show about autism —
-energy use, perception, cognition, and the science
-behind autistic differences.
-</p>
-
-<a href="/facts/">Explore →</a>
-
-</div>
-
-
-<div class="pillar">
-
-<h2>Everyday<br>Life</h2>
-
-<p>
-How autistic people interact with the world around them —
-work, relationships, environments, and expectations.
-</p>
-
-<a href="/everyday-life/">Explore →</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="concepts">
-
-<h2>Key Ideas</h2>
-
-<div class="concept-grid">
-
-<a href="/concepts/burnout">Burnout</a>
-<a href="/concepts/masking">Masking</a>
-<a href="/concepts/monotropism">Monotropism</a>
-<a href="/concepts/prediction-error">Prediction Error</a>
-<a href="/concepts/energetic-limits">Energetic Limits</a>
-<a href="/concepts/social-adaptation">Social Adaptation</a>
-
-</div>
-
-</section>
-
-
-<section class="episodes">
-
-<h2>Recent Episodes</h2>
-
-<ul>
-
-<li>
-<a href="/episodes/physics-of-social-fatigue">
-The Physics of Social Fatigue
-</a>
-<span class="episode-meta">Episode 1</span>
-</li>
-
-<li>
-<a href="#">
-Energetic Precision and Social Cognition
-</a>
-<span class="episode-meta">Episode 2</span>
-</li>
-
-<li>
-<a href="#">
-The Economics of Masking
-</a>
-<span class="episode-meta">Episode 3</span>
-</li>
-
-</ul>
-
-</section>
+    <section class="episodes">
+        <h2>Recent Episodes</h2>
+        <ul>
+            <li>
+                <a href="/episodes/physics-of-social-fatigue">The Physics of Social Fatigue</a>
+                <span class="episode-meta">Episode 1</span>
+            </li>
+            <li>
+                <a href="#">Energetic Precision and Social Cognition</a>
+                <span class="episode-meta">Episode 2</span>
+            </li>
+            <li>
+                <a href="#">The Economics of Masking</a>
+                <span class="episode-meta">Episode 3</span>
+            </li>
+        </ul>
+    </section>
 
 </main>
 
-
 <footer>
-
-Autism, Deconstructed<br>
-Exploring autism through biology, energy, and lived experience.
-
+    Autism, Deconstructed<br>
+    Exploring autism through biology, energy, and lived experience.
 </footer>
 
 </body>
