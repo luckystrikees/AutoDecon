@@ -160,7 +160,9 @@ gap:40px;
 
 .pillar{
 border-top:1px solid #e8e3dc;
+border-bottom:1px solid #e8e3dc;
 padding-top:25px;
+padding-bottom:25px;
 }
 
 .pillar h2{
