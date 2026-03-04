@@ -193,7 +193,7 @@ h3 {
     max-width: 320px; /* Slightly wider to prevent awkward breaking */
     margin: 0 auto;   /* This ensures the individual box stays centered in its grid cell */
     text-align: center;
-    padding: 30px 20px 40px;
+    padding: 15px 10px 20px;
     border-top: 1px solid #ece7df;
     border-bottom: 1px solid #ece7df;
     transition: transform .18s ease;
@@ -207,7 +207,7 @@ h3 {
 }
 
 .pillar-icon {
-    margin-bottom: 16px;
+    margin-bottom: 0px;
     color: #b1a99c; /* Soft contrasting tone */
 }
 
