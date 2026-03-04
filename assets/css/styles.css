@@ -231,10 +231,14 @@ h3 {
 
 .pillar p {
     font-size: 17px;
-    line-height: 1.75;
+    line-height: 1.7;
     color: #444;
     margin-top: 0;
     margin-bottom: 30px;
+    
+    /* These two lines make the paragraph shape much more uniform */
+    text-wrap: pretty; 
+    hyphens: auto; 
 }
 
 .pillar a {
