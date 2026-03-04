@@ -74,32 +74,35 @@ p a:hover {
 }
 
 .tagline {
-    font-size: 20px;
-    color: #444;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    color: #555;
 }
 
 /* Navigation */
 .main-nav {
     text-align: center;
     margin: 40px 0 60px;
+    font-family: "Inter", sans-serif;
     font-size: 14px;
+    font-weight: 500;
     letter-spacing: .08em;
     text-transform: uppercase;
 }
 
 .main-nav a {
-    color: #444;
+    color: #555;
     position: relative;
     padding: 0 6px;
 }
 
 .main-nav span {
-    color: #999;
+    color: #ccc;
     padding: 0 5px;
 }
 
 .main-nav a:hover {
-    color: #000;
+    color: #222;
 }
 
 .main-nav a::after {
@@ -109,7 +112,7 @@ p a:hover {
     bottom: -4px;
     width: 0;
     height: 1px;
-    background: #333;
+    background: #4a5d4e; /* Accent color */
     transition: width .2s ease;
 }
 
@@ -137,7 +140,8 @@ h3 {
     background: #f3efe8;
     padding: 50px 40px;
     border: 1px solid #e8e3dc;
-    box-shadow: 0 10px 24px rgba(0,0,0,.04);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.03);
 }
 
 .player {
@@ -145,22 +149,24 @@ h3 {
 }
 
 .player iframe {
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid #e8e3dc;
     width: 100%;
 }
 
 .listen-link a {
+    font-family: "Inter", sans-serif;
     display: inline-block;
     font-weight: 500;
-    color: #222;
-    border-bottom: 2px solid #d1cbc2;
+    font-size: 15px;
+    color: #4a5d4e; /* Grounding Sage Accent */
+    border-bottom: 2px solid #a3b0a6;
     padding-bottom: 2px;
 }
 
 .listen-link a:hover {
-    color: #000;
-    border-bottom-color: #222;
+    color: #2b382e;
+    border-bottom-color: #4a5d4e;
     text-decoration: none;
 }
 
@@ -170,7 +176,7 @@ h3 {
 .pillars-section {
     margin: 120px 0;
     padding-top: 40px;
-    border-top: 1px solid #ece7df;
+    /* Removed the border-top here that caused the stray double-line */
 }
 
 .pillars {
@@ -178,14 +184,14 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
     justify-items: center;   
-    align-items: stretch; /* Forces equal height columns */
+    align-items: stretch; 
 }
 
 .pillar {
     width: 100%;
     max-width: 260px; 
     text-align: center;
-    padding: 40px 10px;
+    padding: 30px 10px 40px;
     border-top: 1px solid #ece7df;
     border-bottom: 1px solid #ece7df;
     transition: transform .18s ease;
@@ -197,17 +203,27 @@ h3 {
     transform: translateY(-4px);
 }
 
+.pillar-icon {
+    margin-bottom: 16px;
+    color: #b1a99c; /* Soft contrasting tone */
+}
+
+.pillar-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
 .pillar h2 {
-    font-size: 34px;
+    font-size: 30px;
     line-height: 1.15;
     letter-spacing: -0.01em;
     margin-top: 0;
     margin-bottom: 18px;
-    min-height: 120px; /* Aligns all paragraphs to start at the exact same height */
+    min-height: 120px; 
 }
 
 .pillar p {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.75;
     color: #444;
     margin-top: 0;
@@ -215,14 +231,15 @@ h3 {
 }
 
 .pillar a {
-    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
     font-weight: 500;
-    color: #333;
-    margin-top: auto; /* Locks link to the bottom border perfectly */
+    color: #555;
+    margin-top: auto; 
 }
 
 .pillar a:hover {
-    text-decoration: underline;
+    color: #4a5d4e;
 }
 
 /* =================================================
@@ -246,16 +263,18 @@ h3 {
     padding: 20px;
     background: #fff;
     border: 1px solid #ece7df;
+    border-radius: 8px; /* Softened corners */
     font-size: 16px;
     font-weight: 500;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,.02);
+    box-shadow: 0 4px 16px rgba(0,0,0,.02);
 }
 
 .concept-grid a:hover {
     border-color: #d1cbc2;
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0,0,0,.04);
+    box-shadow: 0 8px 24px rgba(0,0,0,.04);
+    color: #4a5d4e;
 }
 
 /* =================================================
@@ -275,30 +294,50 @@ h3 {
 }
 
 .episodes li {
-    padding: 16px 0;
+    padding: 20px 15px;
     border-bottom: 1px solid #ece7df;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.episodes li:last-child {
+    border-bottom: none;
+}
+
+.episodes li:hover {
+    background-color: rgba(0,0,0,0.02); /* Clean hover row highlight */
 }
 
 .episodes a {
     font-size: 20px;
+    font-weight: 500;
+}
+
+.episodes li:hover a {
+    color: #4a5d4e;
 }
 
 .episode-meta {
-    display: block;
+    font-family: "Inter", sans-serif;
     font-size: 14px;
-    color: #777;
-    margin-top: 4px;
+    font-weight: 500;
+    color: #888;
 }
 
 /* =================================================
    Footer
 ================================================= */
 footer {
+    font-family: "Inter", sans-serif;
     text-align: center;
     margin-top: 120px;
     padding-bottom: 40px;
-    color: #555;
-    font-size: 16px;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 /* =================================================
@@ -367,10 +406,27 @@ body::after {
     }
 
     .pillar h2 {
-        min-height: auto; /* Removes the fixed height spacer so it behaves naturally on mobile */
+        min-height: auto; 
     }
 
     .concept-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* =================================================
+   Accessibility: Prefers Reduced Motion
+================================================= */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    body, body::before, body::after {
+        animation: none !important;
+        background-position: 0% 50% !important;
     }
 }
