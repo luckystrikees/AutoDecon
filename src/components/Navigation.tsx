@@ -36,7 +36,7 @@ export function Navigation() {
       >
         <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-14">
           <a href="#" className="font-serif text-lg font-600 text-ink tracking-tight">
-            A<span className="text-ink-muted">,</span>D
+            Autism<span className="text-ink-muted">, </span>Deconstructed
           </a>
 
           {/* Desktop nav */}
