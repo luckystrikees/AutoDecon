@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --color-cream: #faf9f6;
+  --color-cream-dark: #f0efe9;
+  --color-ink: #1c1c1e;
+  --color-ink-light: #3a3a3c;
+  --color-ink-muted: #6e6e73;
+  --color-sage: #5a7a64;
+  --color-sage-light: #e8f0ea;
+  --color-sage-dark: #3d5a45;
+  --color-amber: #c4956a;
+  --color-amber-light: #f5ede4;
+  --color-navy: #1a1d2e;
+  --color-navy-light: #2a2d42;
+  --color-navy-lighter: #3a3d56;
+  --color-warm-white: #f5f4f0;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+}
+
+::selection {
+  background-color: var(--color-sage-light);
+  color: var(--color-sage-dark);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: #c8c7c0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a7a0;
+}
+
+/* Spotify embed styling */
+iframe {
+  border-radius: 12px !important;
+  border: none !important;
+}
