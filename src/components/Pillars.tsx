@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useReducedMotion } from "../utils/useReducedMotion";
 
 const pillars = [
   {
@@ -54,51 +55,55 @@ const pillars = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
+interface PillarsProps {
+  darkMode: boolean;
+}
+
+export function Pillars({ darkMode }: PillarsProps) {
+  const reduced = useReducedMotion();
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: reduced ? 0 : 0.15 },
     },
-  },
-};
+  };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" as const },
-  },
-};
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: reduced ? 0 : 0.6, ease: "easeOut" as const },
+    },
+  };
 
-export function Pillars() {
   return (
     <section
       id="explore"
-      className="py-24 sm:py-32 px-6 bg-warm-white"
+      className={`py-24 sm:py-32 px-6 ${darkMode ? "bg-dark-surface" : "bg-warm-white"}`}
     >
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          initial={reduced ? undefined : { opacity: 0, y: 30 }}
+          whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
+          viewport={reduced ? undefined : { once: true, margin: "-80px" }}
+          transition={reduced ? undefined : { duration: 0.6 }}
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-8 h-px bg-ink/20" />
-            <span className="text-xs font-medium tracking-[0.15em] uppercase text-ink-muted">
+            <div className={`w-8 h-px ${darkMode ? "bg-white/20" : "bg-ink/20"}`} />
+            <span className={`text-xs font-medium tracking-[0.15em] uppercase ${darkMode ? "text-dark-text-muted" : "text-ink-muted"}`}>
               Three Lenses
             </span>
-            <div className="w-8 h-px bg-ink/20" />
+            <div className={`w-8 h-px ${darkMode ? "bg-white/20" : "bg-ink/20"}`} />
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-600 text-ink tracking-tight leading-tight">
+          <h2 className={`font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-tight leading-tight ${darkMode ? "text-dark-text" : "text-ink"}`}>
             Understanding autism
             <br />
-            <span className="italic font-400 text-ink-light">from every angle</span>
+            <span className={`italic font-normal ${darkMode ? "text-dark-text-muted" : "text-ink-light"}`}>from every angle</span>
           </h2>
-          <p className="mt-5 text-ink-muted text-[15px] max-w-md mx-auto leading-relaxed">
+          <p className={`mt-5 text-[15px] max-w-md mx-auto leading-relaxed ${darkMode ? "text-dark-text-muted" : "text-ink-muted"}`}>
             Each episode weaves together these three perspectives to build a more complete,
             honest picture of the autistic experience.
           </p>
@@ -108,14 +113,18 @@ export function Pillars() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={reduced ? undefined : { once: true, margin: "-60px" }}
           className="grid md:grid-cols-3 gap-6"
         >
           {pillars.map((pillar) => (
             <motion.div
               key={pillar.title.join("")}
               variants={cardVariants}
-              className={`group relative bg-cream rounded-2xl border border-ink/[0.06] ${pillar.borderHover} p-8 transition-all duration-500 hover:shadow-xl hover:shadow-ink/[0.04] hover:-translate-y-1`}
+              className={`group relative rounded-2xl border p-8 transition-all duration-500 hover:-translate-y-1 ${
+                darkMode
+                  ? `bg-dark-bg border-white/[0.06] ${pillar.borderHover} hover:shadow-xl hover:shadow-white/[0.02]`
+                  : `bg-cream border-ink/[0.06] ${pillar.borderHover} hover:shadow-xl hover:shadow-ink/[0.04]`
+              }`}
             >
               {/* Icon */}
               <div className={`w-14 h-14 ${pillar.textClass} mb-6 transition-transform duration-500 group-hover:scale-110`}>
@@ -123,14 +132,14 @@ export function Pillars() {
               </div>
 
               {/* Title */}
-              <h3 className="font-serif text-2xl font-600 text-ink leading-tight tracking-tight mb-4">
+              <h3 className={`font-serif text-2xl font-semibold leading-tight tracking-tight mb-4 ${darkMode ? "text-dark-text" : "text-ink"}`}>
                 {pillar.title[0]}
                 <br />
-                <span className="italic font-400 text-ink-light">{pillar.title[1]}</span>
+                <span className={`italic font-normal ${darkMode ? "text-dark-text-muted" : "text-ink-light"}`}>{pillar.title[1]}</span>
               </h3>
 
               {/* Description */}
-              <p className="text-[14px] leading-relaxed text-ink-muted mb-6">
+              <p className={`text-[14px] leading-relaxed mb-6 ${darkMode ? "text-dark-text-muted" : "text-ink-muted"}`}>
                 {pillar.description}
               </p>
 

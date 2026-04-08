@@ -18,6 +18,12 @@
   --color-navy-light: #2a2d42;
   --color-navy-lighter: #3a3d56;
   --color-warm-white: #f5f4f0;
+
+  /* Dark mode colors */
+  --color-dark-bg: #121214;
+  --color-dark-surface: #1c1c1e;
+  --color-dark-text: #e8e8e8;
+  --color-dark-text-muted: #9e9ea3;
 }
 
 * {
@@ -26,13 +32,56 @@
 }
 
 html {
+  /* Respect prefers-reduced-motion for smooth scrolling */
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
   font-family: var(--font-sans);
   background-color: var(--color-cream);
   color: var(--color-ink);
+}
+
+/* Focus-visible styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip navigation link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-sage);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus {
+  top: 0;
 }
 
 ::selection {

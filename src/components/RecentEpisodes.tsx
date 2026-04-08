@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useReducedMotion } from "../utils/useReducedMotion";
 
 const episodes = [
   {
@@ -21,15 +22,21 @@ const episodes = [
   },
 ];
 
-export function RecentEpisodes() {
+interface RecentEpisodesProps {
+  darkMode: boolean;
+}
+
+export function RecentEpisodes({ darkMode }: RecentEpisodesProps) {
+  const reduced = useReducedMotion();
+
   return (
     <section className="py-24 sm:py-32 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          initial={reduced ? undefined : { opacity: 0, y: 30 }}
+          whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
+          viewport={reduced ? undefined : { once: true, margin: "-80px" }}
+          transition={reduced ? undefined : { duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-10">
             <div className="w-8 h-px bg-sage" />
@@ -43,34 +50,48 @@ export function RecentEpisodes() {
               <motion.a
                 key={ep.title}
                 href="#"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group block py-7 border-b border-ink/[0.06] first:border-t transition-colors duration-300 hover:bg-ink/[0.015] -mx-4 px-4 rounded-lg"
+                initial={reduced ? undefined : { opacity: 0, y: 20 }}
+                whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
+                viewport={reduced ? undefined : { once: true, margin: "-40px" }}
+                transition={reduced ? undefined : { duration: 0.5, delay: i * 0.1 }}
+                className={`group block py-7 border-b first:border-t transition-colors duration-300 -mx-4 px-4 rounded-lg ${
+                  darkMode
+                    ? "border-white/[0.06] hover:bg-white/[0.015]"
+                    : "border-ink/[0.06] hover:bg-ink/[0.015]"
+                }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-8">
                   <div className="flex items-center gap-3 sm:w-28 shrink-0">
-                    <span className="text-xs font-medium text-ink-muted tracking-wide uppercase">
+                    <span className={`text-xs font-medium tracking-wide uppercase ${darkMode ? "text-dark-text-muted" : "text-ink-muted"}`}>
                       {ep.number}
                     </span>
-                    <span className="text-xs text-ink/20 hidden sm:inline">·</span>
-                    <span className="text-xs text-ink-muted/60 hidden sm:inline">{ep.duration}</span>
+                    <span className={`text-xs hidden sm:inline ${darkMode ? "text-white/20" : "text-ink/20"}`}>·</span>
+                    <span className={`text-xs hidden sm:inline ${darkMode ? "text-dark-text-muted/60" : "text-ink-muted/60"}`}>{ep.duration}</span>
                   </div>
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <h3 className="font-serif text-xl font-600 text-ink group-hover:text-sage-dark transition-colors duration-300 tracking-tight">
+                        <h3 className={`font-serif text-xl font-semibold tracking-tight transition-colors duration-300 ${
+                          darkMode
+                            ? "text-dark-text group-hover:text-sage"
+                            : "text-ink group-hover:text-sage-dark"
+                        }`}>
                           {ep.title}
                         </h3>
-                        <p className="mt-1.5 text-sm text-ink-muted/80 leading-relaxed line-clamp-2">
+                        <p className={`mt-1.5 text-sm leading-relaxed line-clamp-2 ${darkMode ? "text-dark-text-muted/80" : "text-ink-muted/80"}`}>
                           {ep.description}
                         </p>
                       </div>
-                      <div className="shrink-0 mt-1 w-8 h-8 rounded-full border border-ink/[0.08] group-hover:border-sage/30 group-hover:bg-sage-light flex items-center justify-center transition-all duration-300">
+                      <div className={`shrink-0 mt-1 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                        darkMode
+                          ? "border-white/[0.08] group-hover:border-sage/30 group-hover:bg-sage-light"
+                          : "border-ink/[0.08] group-hover:border-sage/30 group-hover:bg-sage-light"
+                      }`}>
                         <svg
-                          className="w-3.5 h-3.5 text-ink-muted group-hover:text-sage-dark transition-all duration-300 translate-x-0 group-hover:translate-x-0.5"
+                          className={`w-3.5 h-3.5 transition-all duration-300 translate-x-0 group-hover:translate-x-0.5 ${
+                            darkMode ? "text-dark-text-muted group-hover:text-sage" : "text-ink-muted group-hover:text-sage-dark"
+                          }`}
                           viewBox="0 0 16 16"
                           fill="none"
                           stroke="currentColor"
@@ -87,15 +108,19 @@ export function RecentEpisodes() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            initial={reduced ? undefined : { opacity: 0 }}
+            whileInView={reduced ? undefined : { opacity: 1 }}
+            viewport={reduced ? undefined : { once: true }}
+            transition={reduced ? undefined : { duration: 0.5, delay: 0.4 }}
             className="mt-10 text-center"
           >
             <a
               href="#"
-              className="inline-flex items-center gap-2 px-6 py-2.5 border border-ink/[0.1] hover:border-ink/20 text-sm font-medium text-ink-muted hover:text-ink rounded-full transition-all duration-300"
+              className={`inline-flex items-center gap-2 px-6 py-2.5 border text-sm font-medium rounded-full transition-all duration-300 ${
+                darkMode
+                  ? "border-white/[0.1] hover:border-white/20 text-dark-text-muted hover:text-dark-text"
+                  : "border-ink/[0.1] hover:border-ink/20 text-ink-muted hover:text-ink"
+              }`}
             >
               View All Episodes
               <svg className="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
